@@ -18,18 +18,25 @@ class BarControl extends React.Component {
       formVisibleOnPage : !prevState.formVisibleOnPage
     }));
   }
+  handleAddingNewTicketToList = (newMenu) =>{
+    const newMainMenuList = this.state.mainMenuList.concat(newMenu);
+    this.setState({mainMenuList :newMainMenuList,
+    formVisibleOnPage : false })
+  }
 
   render(){
     let currentlyVisibleState= null;
     let buttonText = null;
-    if(!this.state.formVisibleOnPage){
-    currentlyVisibleState =<MenuList/>
-    buttonText ="Add new menu"
-    }
-    else if(this.state.formVisibleOnPage){
-      currentlyVisibleState =<NewMenuForm/>
+    
+   if(this.state.formVisibleOnPage){
+      currentlyVisibleState =<NewMenuForm onNewMenuCreation={this.handleAddingNewMenuToList}/>
       buttonText ="Return to menu List"
     }
+    else {
+      currentlyVisibleState =<MenuList menuList = {this.state.mainMenuList}/>
+      buttonText ="Add new menu"
+      }
+   
 
     return(
       <React.Fragment>
