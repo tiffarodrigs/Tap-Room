@@ -4,7 +4,7 @@ function Menu(props){
   return(
     <React.Fragment>
       <div onClick = {() => props.whenMenuClicked(props.id)}>
-      <h3>{props.name} - {props.price}</h3>
+      <h3>{props.menu_name} - {props.price}</h3>
       
       <hr/>
       </div>
@@ -13,7 +13,7 @@ function Menu(props){
 }
 
 Menu.propTypes = {
-  name : PropTypes.string,
+  menu_name : PropTypes.string,
   brand : PropTypes.string,
   price : PropTypes.number,
   alcohol_content: PropTypes.number, 

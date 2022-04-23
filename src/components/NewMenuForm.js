@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import {v4} from 'uuid';
 
-function NewMenuForm(prop){
+function NewMenuForm(props){
   
   function handleNewMenuFormSubmission(event){
     event.preventDefault();
-    prop.onNewMenuCreation({
-      name:event.target.name.value,
+    props.onNewMenuCreation({
+      menu_name:event.target.menu_name.value,
       brand : event.target.brand.value,
       price : event.target.price.value,
-      alcohol_contents : event.target.alcohol_contents.value,
+      alcohol_content : event.target.alcohol_content.value,
       id: v4()
     });
   }
@@ -21,8 +21,8 @@ function NewMenuForm(prop){
       <form onSubmit = {handleNewMenuFormSubmission}>
         <input 
         type='text' 
-        name ='name' 
-        placeholder="name"/>
+        name ='menu_name' 
+        placeholder="menu_name"/>
         <input 
         type='text' 
         name ='brand' 
@@ -35,7 +35,7 @@ function NewMenuForm(prop){
         type="number" 
         name ='alcohol_content' 
         placeholder="alcohol content"/>
-        <button type='submit'>Add</button> 
+        <button type='submit'>Help!</button> 
       </form>
     </React.Fragment>
   ); 
