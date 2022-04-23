@@ -15,10 +15,18 @@ class BarControl extends React.Component {
   }
 
   handleClick =()=>{
-    this.setState(prevState=>({
+    if(this.state.selectedMenu!=null){
+      this.setState({
+        formVisibleOnPage: false,
+        selectedMenu: null     
+      });
+    } else{
+      this.setState(prevState=>({
       formVisibleOnPage : !prevState.formVisibleOnPage
-    }));
+      }));
+    }
   }
+
   handleAddingNewMenuToList = (newMenu) =>{
     const newMainMenuList = this.state.mainMenuList.concat(newMenu);
     this.setState({mainMenuList :newMainMenuList,
@@ -32,6 +40,7 @@ class BarControl extends React.Component {
   render(){
     let currentlyVisibleState= null;
     let buttonText = null;
+
     if(this.state.selectedMenu != null){
       currentlyVisibleState= <MenuDetail 
       menu = {this.state.selectedMenu} />

@@ -9,7 +9,7 @@ function MenuList(props){
       {props.menuList.map((menu)=>
       <Menu
       whenMenuClicked = {props.onMenuSelection}
-      menu_name = {menu.name}
+      menu_name = {menu.menu_name}
       brand = {menu.brand}
       price ={menu.price}
       alcohol_content={menu.alcohol_content}

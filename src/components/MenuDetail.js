@@ -1,11 +1,19 @@
 import React from "react";
-function MenuDetail(){
+import PropTypes from "prop-types";
+function MenuDetail(props){
+  const {menu}=props;
   return(
     <React.Fragment>
-      <h3>Menu Detail</h3>
+      <h1>Menu Detail</h1>
+      <h3>{menu.menu_name} - {menu.brand}</h3>
+      <p><em>{menu.price}</em></p>
+      <p><em>{menu.alcohol_content}</em></p>
+      <hr/>
     </React.Fragment>
   );
   
 }
-
+MenuDetail.propTypes = {
+  menu: PropTypes.object
+}
 export default MenuDetail; 
