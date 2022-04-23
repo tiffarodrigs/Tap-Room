@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuList from './MenuList';
 import NewMenuForm from './NewMenuForm';
+import MenuDetail from './MenuDetail';
 
 class BarControl extends React.Component {
   constructor(props){
@@ -23,17 +24,25 @@ class BarControl extends React.Component {
     this.setState({mainMenuList :newMainMenuList,
     formVisibleOnPage : false })
   }
+  handleChangingSelectedMenu = (id) =>{
+    const selectedMenu = this.state.mainMenuList.filter(menu=>menu.id === id)[0];
+    this.setState({selectedMenu : selectedMenu});
+  }
 
   render(){
     let currentlyVisibleState= null;
     let buttonText = null;
-    
-   if(this.state.formVisibleOnPage){
+    if(this.state.selectedMenu != null){
+      currentlyVisibleState= <MenuDetail 
+      ticket = {this.state.selectedMenu} />
+      buttonText = "Return to Ticket List";
+    }
+   else if(this.state.formVisibleOnPage){
       currentlyVisibleState =<NewMenuForm onNewMenuCreation={this.handleAddingNewMenuToList}/>
       buttonText ="Return to menu List"
     }
     else {
-      currentlyVisibleState =<MenuList menuList = {this.state.mainMenuList}/>
+      currentlyVisibleState =<MenuList menuList = {this.state.mainMenuList} onMenuSelection = {this.handleChangingSelectedMenu}/>
       buttonText ="Add new menu"
       }
    

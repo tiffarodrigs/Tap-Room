@@ -1,5 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
+import PropTypes from "prop-types";
+
 function MenuList(props){
   return(
     <React.Fragment>
@@ -20,7 +22,8 @@ function MenuList(props){
 
 }
 MenuList.propTypes = {
-  ticketList : PropTypes.array
+  ticketList : PropTypes.array,
+  onMenuSelection : PropTypes.func
 
 };
 

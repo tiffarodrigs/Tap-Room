@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {v4} from 'uuid';
 
 function NewMenuForm(prop){
   
@@ -9,7 +10,9 @@ function NewMenuForm(prop){
       name:event.target.name.value,
       brand : event.target.brand.value,
       price : event.target.price.value,
-      alcohol_contents : event.target.alcohol_contents.value})
+      alcohol_contents : event.target.alcohol_contents.value,
+      id: v4()
+    });
   }
 
   return(
