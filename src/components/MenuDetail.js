@@ -8,6 +8,7 @@ function MenuDetail(props){
       <h3>{menu.menu_name} - {menu.brand}</h3>
       <p><em>{menu.price}</em></p>
       <p><em>{menu.alcohol_content}</em></p>
+      <p><em>{menu.pint}</em></p>
       <hr/>
     </React.Fragment>
   );

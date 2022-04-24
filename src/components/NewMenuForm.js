@@ -11,6 +11,7 @@ function NewMenuForm(props){
       brand : event.target.brand.value,
       price : event.target.price.value,
       alcohol_content : event.target.alcohol_content.value,
+      pint : event.target.pint.value,
       id: v4()
     });
   }
@@ -22,7 +23,7 @@ function NewMenuForm(props){
         <input 
         type='text' 
         name ='menu_name' 
-        placeholder="menu_name"/>
+        placeholder="name"/>
         <input 
         type='text' 
         name ='brand' 
@@ -35,7 +36,11 @@ function NewMenuForm(props){
         type="number" 
         name ='alcohol_content' 
         placeholder="alcohol content"/>
-        <button type='submit'>Help!</button> 
+        <input 
+        type="number" 
+        name ='pint' 
+        placeholder="keg quanity"/>
+        <button type='submit'>Add</button> 
       </form>
     </React.Fragment>
   ); 
