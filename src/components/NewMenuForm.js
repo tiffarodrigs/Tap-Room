@@ -20,26 +20,31 @@ function NewMenuForm(props){
     <React.Fragment>
       <h3> New Menu Form</h3>
       <form onSubmit = {handleNewMenuFormSubmission}>
+        <label>Name : </label>
         <input 
         type='text' 
         name ='menu_name' 
-        placeholder="name"/>
+        placeholder="name"/><br/>
+        <label>Brand : </label>
         <input 
         type='text' 
         name ='brand' 
-        placeholder="brand"/>
+        placeholder="brand"/><br/>
+        <label>Price : </label>
         <input 
         type='number' 
         name ='price' 
-        placeholder="price"/>
+        placeholder="price"/><br></br>
+        <label>Alcohol Content : </label>
         <input 
         type="number" 
         name ='alcohol_content' 
-        placeholder="alcohol content"/>
+        placeholder="alcohol content"/><br/>
+        <label>Quantity : </label>
         <input 
         type="number" 
         name ='pint' 
-        placeholder="keg quanity"/>
+        placeholder="keg quanity"/><br/>
         <button type='submit'>Add</button> 
       </form>
     </React.Fragment>
